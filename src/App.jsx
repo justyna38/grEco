@@ -19,7 +19,6 @@ import ConfidentialitePage from './pages/ConfidentialitePage.jsx';
 import NotFoundPage from './pages/NotFoundPage.jsx';
 import LoginPage from './pages/LoginPage.jsx';
 import ProduitsPage from './pages/ProduitsPage.jsx';
-import RequireAuth from './components/RequireAuth.jsx';
 
 const siteUrl = 'https://www.greco-local.fr';
 
@@ -60,14 +59,7 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/marche" element={<MarchePage />} />
           <Route path="/connexion" element={<LoginPage />} />
-          <Route
-            path="/produits"
-            element={
-              <RequireAuth>
-                <ProduitsPage />
-              </RequireAuth>
-            }
-          />
+          <Route path="/produits" element={<ProduitsPage />} />
           <Route path="/producteurs" element={<ProducteursPage />} />
           <Route path="/producteurs/:id" element={<ProducteurDetailPage />} />
           <Route path="/comment-ca-marche" element={<CommentCaMarchePage />} />
