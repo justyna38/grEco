@@ -49,55 +49,12 @@ function HomePage() {
           </div>
         </section>
 
-        <aside aria-label="Illustration de l&apos;impact écologique" className="card">
-          <div className="card-header">
-            <div>
-              <p className="card-title">Votre impact, visualisé</p>
-              <p className="card-sub">
-                Suivez les kilomètres économisés et l&apos;empreinte carbone réduite grâce à vos
-                commandes locales.
-              </p>
-            </div>
-            <span className="badge">
-              <span aria-hidden="true">♻️</span> Eco-score
-            </span>
-          </div>
-
-          <div className="grid grid-3">
-            <div className="card-soft">
-              <p className="tagline">
-                <span className="highlight">-40%</span> en moyenne d&apos;émissions vs. panier
-                classique.
-              </p>
-              <ul className="checklist">
-                <li>Rayon limité à 50 km</li>
-                <li>Optimisation des tournées</li>
-              </ul>
-            </div>
-            <div className="card-soft">
-              <p className="tagline">
-                <span className="highlight">+20%</span> de revenu pour les producteurs.
-              </p>
-              <ul className="checklist">
-                <li>Moins d&apos;intermédiaires</li>
-                <li>Prix fixés avec les producteurs</li>
-              </ul>
-            </div>
-            <div className="card-soft">
-              <p className="tagline">
-                <span className="highlight">100 % local</span> métropole grenobloise.
-              </p>
-              <ul className="checklist">
-                <li>Grenoble &amp; communes voisines</li>
-                <li>Producteurs vérifiés</li>
-              </ul>
-            </div>
-          </div>
-
-          <p className="note">
-            Données indicatives basées sur les circuits courts existants dans la région et les
-            moyennes d&apos;émissions de transport alimentaire.
-          </p>
+        <aside aria-label="Illustration GrEco au marché" className="hero-media">
+          <img
+            src="/images/greco-hero.png"
+            alt="Illustration GrEco avec les montagnes et un marché de producteurs"
+            loading="lazy"
+          />
         </aside>
       </header>
 
@@ -210,6 +167,25 @@ function HomePage() {
                 contraintes de vente directe.
               </li>
             </ul>
+          </article>
+        </div>
+      </section>
+
+      <section className="section" aria-label="Photos du marché local">
+        <div className="grid grid-2 photo-cards">
+          <article className="card-soft image-card">
+            <img
+              src="/images/marche-plein-air.png"
+              alt="Étals de fruits et légumes sur un marché de plein air"
+              loading="lazy"
+            />
+          </article>
+          <article className="card-soft image-card">
+            <img
+              src="/images/marche-interieur.png"
+              alt="Productrice choisissant des légumes sur un marché couvert"
+              loading="lazy"
+            />
           </article>
         </div>
       </section>

@@ -282,6 +282,20 @@ a:hover {
   align-items: center;
 }
 
+.hero-media {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: #000;
+  box-shadow: 0 22px 40px rgba(9, 37, 24, 0.18);
+}
+
+.hero-media img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
 .hero-main {
   display: grid;
   gap: 1.2rem;
@@ -365,6 +379,22 @@ a:hover {
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
 }
 
+.photo-cards {
+  align-items: stretch;
+}
+
+.image-card {
+  padding: 0;
+  overflow: hidden;
+}
+
+.image-card img {
+  width: 100%;
+  display: block;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
 .card {
   border-radius: var(--radius-lg);
   background: rgba(250, 253, 251, 0.94);
@@ -378,6 +408,7 @@ a:hover {
   background: rgba(244, 250, 246, 0.98);
   border: 1px solid rgba(15, 60, 40, 0.04);
   box-shadow: 0 14px 28px rgba(11, 46, 30, 0.14);
+  padding: 1rem 1.1rem;
 }
 
 .card-header {
