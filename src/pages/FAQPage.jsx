@@ -9,7 +9,7 @@ function FAQPage() {
           name="description"
           content="Questions fréquentes sur GrEco : fonctionnement, éligibilité des producteurs, zone couverte, types de produits et impact écologique."
         />
-        <link rel="canonical" href="https://www.greco-local.fr/faq" />
+        <link rel="canonical" href="https://gr-eco.vercel.app/faq" />
       </Helmet>
 
       <header className="page-header">

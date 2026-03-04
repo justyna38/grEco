@@ -9,7 +9,7 @@ function AProposPage() {
           name="description"
           content="Découvrez l’histoire et le positionnement de GrEco, la marketplace locale écoresponsable dédiée à la métropole grenobloise."
         />
-        <link rel="canonical" href="https://www.greco-local.fr/a-propos" />
+        <link rel="canonical" href="https://gr-eco.vercel.app/a-propos" />
       </Helmet>
 
       <header className="page-header">

@@ -20,7 +20,7 @@ import NotFoundPage from './pages/NotFoundPage.jsx';
 import LoginPage from './pages/LoginPage.jsx';
 import ProduitsPage from './pages/ProduitsPage.jsx';
 
-const siteUrl = 'https://www.greco-local.fr';
+const siteUrl = 'https://gr-eco.vercel.app';
 
 function App() {
   return (
@@ -42,6 +42,14 @@ function App() {
           property="og:description"
           content="Découvrez les producteurs et commerces écoresponsables autour de Grenoble et commandez en quelques clics."
         />
+        <meta property="og:image" content={`${siteUrl}/images/greco-hero.png`} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="GrEco – Marketplace locale écoresponsable à Grenoble" />
+        <meta
+          name="twitter:description"
+          content="Marketplace locale qui connecte les producteurs et commerces écoresponsables de la métropole grenobloise avec les consommateurs."
+        />
+        <meta name="twitter:image" content={`${siteUrl}/images/greco-hero.png`} />
         <script type="application/ld+json">
           {JSON.stringify({
             '@context': 'https://schema.org',

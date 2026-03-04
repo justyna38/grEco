@@ -70,7 +70,7 @@ function ProducteurDetailPage() {
           name="description"
           content={`${producteur.nom}, ${producteur.type} situé à ${producteur.localisation}, partenaire de la marketplace locale écoresponsable GrEco.`}
         />
-        <link rel="canonical" href={`https://www.greco-local.fr/producteurs/${id}`} />
+        <link rel="canonical" href={`https://gr-eco.vercel.app/producteurs/${id}`} />
       </Helmet>
 
       <header className="page-header">

@@ -9,7 +9,7 @@ function ContactPage() {
           name="description"
           content="Contactez l’équipe GrEco pour toute question, partenariat ou demande d’inscription en tant que producteur autour de Grenoble."
         />
-        <link rel="canonical" href="https://www.greco-local.fr/contact" />
+        <link rel="canonical" href="https://gr-eco.vercel.app/contact" />
       </Helmet>
 
       <header className="page-header">

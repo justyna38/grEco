@@ -10,7 +10,7 @@ function CommentCaMarchePage() {
           name="description"
           content="Découvrez comment fonctionne GrEco : sélection des producteurs, commande en ligne, livraison ou retrait autour de Grenoble et suivi de votre impact écologique."
         />
-        <link rel="canonical" href="https://www.greco-local.fr/comment-ca-marche" />
+        <link rel="canonical" href="https://gr-eco.vercel.app/comment-ca-marche" />
       </Helmet>
 
       <header className="page-header">

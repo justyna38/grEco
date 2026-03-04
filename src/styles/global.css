@@ -47,6 +47,11 @@ a:hover {
   text-decoration: underline;
 }
 
+a:focus-visible {
+  outline: 2px solid rgba(46, 139, 87, 0.7);
+  outline-offset: 2px;
+}
+
 .app-root {
   min-height: 100vh;
   display: flex;
@@ -337,6 +342,14 @@ a:hover {
 .btn-primary:hover,
 .btn-outline:hover {
   filter: brightness(1.03);
+}
+
+.btn:focus-visible,
+.nav-toggle:focus-visible,
+.nav-account:focus-visible,
+.site-nav a:focus-visible {
+  outline: 2px solid rgba(46, 139, 87, 0.85);
+  outline-offset: 3px;
 }
 
 .hero-badge-row {

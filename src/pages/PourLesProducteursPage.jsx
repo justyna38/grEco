@@ -10,7 +10,7 @@ function PourLesProducteursPage() {
           name="description"
           content="GrEco aide les producteurs et commerçants écoresponsables autour de Grenoble à vendre plus régulièrement, sans complexifier leur organisation. Découvrez l’espace producteurs."
         />
-        <link rel="canonical" href="https://www.greco-local.fr/pour-les-producteurs" />
+        <link rel="canonical" href="https://gr-eco.vercel.app/pour-les-producteurs" />
       </Helmet>
 
       <header className="page-header">
