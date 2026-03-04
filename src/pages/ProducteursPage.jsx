@@ -9,7 +9,8 @@ const mockProducteurs = [
     localisation: 'Saint-Martin-d’Hères',
     distance: '7 km',
     labels: ['AB', 'Circuit court'],
-    resume: 'Légumes de saison cultivés en agriculture biologique.'
+    resume: 'Légumes de saison cultivés en agriculture biologique.',
+    image: '/images/bio.jpg',
   },
   {
     id: 'boulangerie-des-alpes',
@@ -18,7 +19,9 @@ const mockProducteurs = [
     localisation: 'Grenoble',
     distance: '2 km',
     labels: ['Farines locales', 'Four à bois'],
-    resume: 'Pains au levain pétris et cuits sur place avec des farines de la région.'
+    resume:
+      'Pains au levain pétris et cuits sur place avec des farines de la région.',
+    image: '/images/boulangerie-des-alpes.jpg',
   },
   {
     id: 'fromagerie-du-vercors',
@@ -27,73 +30,107 @@ const mockProducteurs = [
     localisation: 'Vercors',
     distance: '35 km',
     labels: ['Local', 'Pâturage'],
-    resume: 'Fromages de montagne issus d’un élevage respectueux du bien-être animal.'
-  }
+    resume:
+      'Fromages de montagne issus d’un élevage respectueux du bien-être animal.',
+    image: '/images/fromagerie.jpg',
+  },
 ];
 
 function ProducteursPage() {
   return (
     <div className="page">
       <Helmet>
-        <title>Producteurs &amp; commerces partenaires – GrEco</title>
+        <title>Producteurs & commerces partenaires – GrEco</title>
         <meta
           name="description"
           content="Découvrez les producteurs et commerces écoresponsables partenaires de GrEco autour de Grenoble : maraîchers, éleveurs, boulangers, fromagers, épiceries bio..."
         />
-        <link rel="canonical" href="https://www.greco-local.fr/producteurs" />
+        <link rel="canonical" href="https://gr-eco.vercel.app/producteurs" />
       </Helmet>
 
       <header className="page-header">
-        <p className="page-kicker">Producteurs &amp; commerces</p>
+        <p className="page-kicker">Producteurs & commerces</p>
         <h1 className="page-title">Une communauté de producteurs engagés.</h1>
         <p className="page-lead">
-          GrEco donne de la visibilité aux producteurs et commerçants écoresponsables déjà actifs
-          dans la région grenobloise, et leur permet de vendre plus régulièrement sans y consacrer
-          davantage de temps.
+          GrEco donne de la visibilité aux producteurs et commerçants
+          écoresponsables déjà actifs dans la région grenobloise, et leur permet
+          de vendre plus régulièrement sans y consacrer davantage de temps.
         </p>
       </header>
 
       <section className="section">
+        <div className="products-hero card-soft">
+          <div>
+            <p className="tagline">
+              Chaque fiche producteur met en avant l'origine, les pratiques
+              écoresponsables et l'impact local associé.
+            </p>
+            <ul className="checklist">
+              <li>Origine géographique claire pour chaque producteur</li>
+              <li>
+                Mise en avant des filières bio, artisanales ou circuits courts
+              </li>
+              <li>Accès direct aux fiches détaillées et commandes</li>
+            </ul>
+          </div>
+          <div className="chips-kpi">
+            <span className="badge-soft">Annuaire producteurs</span>
+            <span className="badge-soft">Visuels authentiques</span>
+          </div>
+        </div>
+      </section>
+
+      <section className="section">
         <div className="section-header">
-          <h2 className="section-title">Exemples de producteurs partenaires</h2>
+          <h2 className="section-title">Nos producteurs partenaires</h2>
           <p className="section-sub">
-            La liste ci-dessous illustre le type de profils que GrEco met en avant. Chaque
-            producteur dispose d&apos;une page dédiée avec son histoire, ses pratiques et ses
-            produits.
+            Une base parfaite pour découvrir les acteurs locaux et tester la
+            navigation vers les fiches détaillées.
           </p>
         </div>
 
-        <div className="grid grid-3">
+        <div className="grid grid-3 products-grid">
           {mockProducteurs.map((p) => (
-            <article key={p.id} className="card-soft" itemScope itemType="https://schema.org/LocalBusiness">
-              <div className="card-header">
-                <div>
-                  <h3 className="card-title" itemProp="name">
-                    {p.nom}
-                  </h3>
-                  <p className="card-sub" itemProp="description">
-                    {p.type}
-                  </p>
+            <article key={p.id} className="card product-card producer-card">
+              <div className="product-image-wrapper">
+                <img
+                  src={p.image}
+                  alt={`${p.nom} - ${p.type}, ${p.localisation}`}
+                  loading="lazy"
+                />
+              </div>
+              <div className="product-content">
+                <h3 className="card-title">{p.nom}</h3>
+                <p className="card-sub">
+                  <span className="product-category">{p.type}</span> ·{' '}
+                  <span className="product-origin">{p.localisation}</span>
+                </p>
+                <p className="product-price distance-price">
+                  ~{p.distance} de Grenoble
+                </p>
+                <div className="pill-group">
+                  {p.labels.map((label) => (
+                    <span key={label} className="pill-small">
+                      {label}
+                    </span>
+                  ))}
                 </div>
-                <span className="badge">
-                  <span aria-hidden="true">📍</span> {p.localisation}
-                </span>
+                <p className="product-description">{p.resume}</p>
+                <Link
+                  to={`/producteurs/${p.id}`}
+                  className="btn btn-primary product-btn"
+                >
+                  Voir la fiche producteur
+                </Link>
               </div>
-              <p className="tagline">{p.resume}</p>
-              <div className="pill-group" aria-label="Labels et engagements">
-                {p.labels.map((label) => (
-                  <span key={label} className="pill-small">
-                    {label}
-                  </span>
-                ))}
-              </div>
-              <p className="note">Environ {p.distance} de Grenoble.</p>
-              <Link to={`/producteurs/${p.id}`} className="btn btn-outline">
-                Voir la fiche producteur
-              </Link>
             </article>
           ))}
         </div>
+
+        <p className="note">
+          Ces fiches illustrent l'expérience future de GrEco. Les informations
+          sont données à titre d'exemple.
+        </p>
       </section>
 
       <section className="section">
@@ -101,23 +138,28 @@ function ProducteursPage() {
           <div className="two-column">
             <div>
               <p className="page-kicker">Espace producteurs</p>
-              <h2 className="section-title">Vous êtes producteur ou commerçant local ?</h2>
+              <h2 className="section-title">
+                Vous êtes producteur ou commerçant local ?
+              </h2>
               <p className="section-sub">
-                GrEco vous aide à toucher une nouvelle clientèle sensible au local et au bio, sans
-                multiplier les permanences et les déplacements.
+                GrEco vous aide à toucher une nouvelle clientèle sensible au
+                local et au bio, sans multiplier les permanences et les
+                déplacements.
               </p>
               <ul className="checklist">
-                <li>Création de fiche détaillée (histoire, pratiques, produits)</li>
+                <li>
+                  Création de fiche détaillée (histoire, pratiques, produits)
+                </li>
                 <li>Outil de commande simple pour vos clients</li>
                 <li>Accompagnement à la mise en ligne de votre offre</li>
               </ul>
             </div>
             <div className="hero-actions">
               <Link to="/pour-les-producteurs" className="btn btn-primary">
-                Découvrir l&apos;offre producteurs
+                Découvrir l'offre producteurs
               </Link>
               <Link to="/contact" className="btn btn-outline">
-                Discuter avec l&apos;équipe GrEco
+                Discuter avec l'équipe GrEco
               </Link>
             </div>
           </div>
@@ -128,4 +170,3 @@ function ProducteursPage() {
 }
 
 export default ProducteursPage;
-
