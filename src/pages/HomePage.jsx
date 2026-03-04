@@ -3,12 +3,16 @@ import { Link } from 'react-router-dom';
 
 function HomePage() {
   return (
-    <div className="page" itemScope itemType="https://schema.org/DiscoverAction">
+    <div
+      className="page"
+      itemScope
+      itemType="https://schema.org/DiscoverAction"
+    >
       <Helmet>
         <title>GrEco – Marketplace locale écoresponsable à Grenoble</title>
         <meta
           name="description"
-          content="GrEco simplifie l&apos;accès aux producteurs et commerces écoresponsables situés à moins de 50 km de Grenoble. Commandez local, en quelques clics."
+          content="GrEco simplifie l'accès aux producteurs et commerces écoresponsables situés à moins de 50 km de Grenoble. Commandez local, en quelques clics."
         />
         <link rel="canonical" href="https://gr-eco.vercel.app/" />
         <script type="application/ld+json">
@@ -18,16 +22,16 @@ function HomePage() {
             name: 'GrEco',
             url: 'https://gr-eco.vercel.app/',
             description:
-              "Marketplace locale écoresponsable qui connecte les producteurs et commerces engagés de la métropole grenobloise avec les habitants.",
+              'Marketplace locale écoresponsable qui connecte les producteurs et commerces engagés de la métropole grenobloise avec les habitants.',
             address: {
               '@type': 'PostalAddress',
               addressLocality: 'Grenoble',
-              addressCountry: 'FR'
+              addressCountry: 'FR',
             },
             areaServed: {
               '@type': 'AdministrativeArea',
-              name: 'Métropole grenobloise'
-            }
+              name: 'Métropole grenobloise',
+            },
           })}
         </script>
       </Helmet>
@@ -41,9 +45,10 @@ function HomePage() {
             La marketplace locale qui aligne vos courses avec vos valeurs.
           </h1>
           <p className="page-lead" itemProp="description">
-            GrEco connecte les consommateurs de la métropole grenobloise avec des producteurs et
-            commerces écoresponsables triés sur le volet. Circuits courts, saisonnalité et
-            transparence, sans complexité logistique.
+            GrEco connecte les consommateurs de la métropole grenobloise avec
+            des producteurs et commerces écoresponsables triés sur le volet.
+            Circuits courts, saisonnalité et transparence, sans complexité
+            logistique.
           </p>
 
           <div className="hero-actions">
@@ -63,7 +68,8 @@ function HomePage() {
               <span aria-hidden="true">🚲</span> Livraison ou retrait flexible
             </span>
             <span className="hero-badge">
-              <span aria-hidden="true">🤝</span> Meilleure rémunération des producteurs
+              <span aria-hidden="true">🤝</span> Meilleure rémunération des
+              producteurs
             </span>
           </div>
         </section>
@@ -84,47 +90,78 @@ function HomePage() {
             Pensé pour la réalité des producteurs et des habitants de Grenoble.
           </h2>
           <p className="section-sub">
-            GrEco s&apos;adresse à celles et ceux qui veulent consommer mieux sans passer leur
-            semaine à courir les marchés, et aux producteurs qui souhaitent vendre plus régulièrement
-            sans alourdir leur charge de travail.
+            GrEco s'adresse à celles et ceux qui veulent consommer mieux sans
+            passer leur semaine à courir les marchés, et aux producteurs qui
+            souhaitent vendre plus régulièrement sans alourdir leur charge de
+            travail.
           </p>
         </div>
 
-        <div className="grid grid-3">
-          <article className="card-soft">
-            <h3 className="card-title">Pour les consommateurs</h3>
-            <p className="card-sub">
-              Une app moderne pour faire ses courses locales en quelques minutes.
-            </p>
-            <ul className="checklist">
-              <li>Vue d&apos;ensemble de l&apos;offre locale (bio, raisonné, vrac…)</li>
-              <li>Livraison ou retrait selon vos contraintes</li>
-              <li>Traçabilité et impact environnemental visibles</li>
-            </ul>
+        <div className="grid grid-3 products-grid">
+          <article className="card product-card audience-card">
+            <div className="product-image-wrapper">
+              <img
+                src="/images/consomateurs.jpg"
+                alt="Consommateurs au marché bio Grenoble - GrEco"
+                loading="lazy"
+              />
+            </div>
+            <div className="product-content">
+              <h3 className="card-title">Pour les consommateurs</h3>
+              <p className="card-sub">
+                Une app moderne pour faire ses courses locales en quelques
+                minutes.
+              </p>
+              <ul className="checklist product-checklist">
+                <li>Vue d'ensemble de l'offre locale (bio, raisonné, vrac…)</li>
+                <li>Livraison ou retrait selon vos contraintes</li>
+                <li>Traçabilité et impact environnemental visibles</li>
+              </ul>
+            </div>
           </article>
 
-          <article className="card-soft">
-            <h3 className="card-title">Pour les producteurs</h3>
-            <p className="card-sub">
-              Une vitrine commune pour gagner en visibilité sans perdre du temps en logistique.
-            </p>
-            <ul className="checklist">
-              <li>Pages dédiées par producteur</li>
-              <li>Commandes regroupées par créneau</li>
-              <li>Support et accompagnement à la mise en ligne</li>
-            </ul>
+          <article className="card product-card audience-card">
+            <div className="product-image-wrapper">
+              <img
+                src="/images/producteurs.jpg"
+                alt="Producteurs boulangerie artisanale Grenoble - GrEco"
+                loading="lazy"
+              />
+            </div>
+            <div className="product-content">
+              <h3 className="card-title">Pour les producteurs</h3>
+              <p className="card-sub">
+                Une vitrine commune pour gagner en visibilité sans perdre du
+                temps en logistique.
+              </p>
+              <ul className="checklist product-checklist">
+                <li>Pages dédiées par producteur</li>
+                <li>Commandes regroupées par créneau</li>
+                <li>Support et accompagnement à la mise en ligne</li>
+              </ul>
+            </div>
           </article>
 
-          <article className="card-soft">
-            <h3 className="card-title">Pour le territoire</h3>
-            <p className="card-sub">
-              Une économie plus résiliente, axée sur le circuit court et la qualité.
-            </p>
-            <ul className="checklist">
-              <li>Valorisation des savoir-faire locaux</li>
-              <li>Réduction du gaspillage via une meilleure visibilité</li>
-              <li>Renforcement du lien entre ville et campagnes</li>
-            </ul>
+          <article className="card product-card audience-card">
+            <div className="product-image-wrapper">
+              <img
+                src="/images/territoire.jpg"
+                alt="Produits locaux territoire Grenoble - GrEco"
+                loading="lazy"
+              />
+            </div>
+            <div className="product-content">
+              <h3 className="card-title">Pour le territoire</h3>
+              <p className="card-sub">
+                Une économie plus résiliente, axée sur le circuit court et la
+                qualité.
+              </p>
+              <ul className="checklist product-checklist">
+                <li>Valorisation des savoir-faire locaux</li>
+                <li>Réduction du gaspillage via une meilleure visibilité</li>
+                <li>Renforcement du lien entre ville et campagnes</li>
+              </ul>
+            </div>
           </article>
         </div>
       </section>
@@ -135,8 +172,8 @@ function HomePage() {
             Une plateforme pensée pour durer, pas pour faire un coup.
           </h2>
           <p className="section-sub">
-            Le succès de GrEco se mesure en commandes régulières, en réachat et en satisfaction,
-            pas seulement en téléchargements.
+            Le succès de GrEco se mesure en commandes régulières, en réachat et
+            en satisfaction, pas seulement en téléchargements.
           </p>
         </div>
 
@@ -144,8 +181,8 @@ function HomePage() {
           <article className="card-soft">
             <h3 className="card-title">Nos indicateurs clés</h3>
             <p className="tagline">
-              Objectif : devenir un réflexe hebdomadaire pour une partie des foyers grenoblois
-              sensibles au local.
+              Objectif : devenir un réflexe hebdomadaire pour une partie des
+              foyers grenoblois sensibles au local.
             </p>
 
             <div className="chips-kpi">
@@ -169,21 +206,27 @@ function HomePage() {
           <article className="card-soft">
             <h3 className="card-title">Une traction déjà visible</h3>
             <p className="tagline">
-              GrEco s&apos;appuie sur un terreau favorable : circuits courts déjà présents,
-              habitants sensibilisés et habitude des apps de livraison.
+              GrEco s&apos;appuie sur un terreau favorable : circuits courts
+              déjà présents, habitants sensibilisés et habitude des apps de
+              livraison.
             </p>
             <ul className="timeline">
               <li>
-                Multiplication des AMAP, marchés, coopératives sur la région grenobloise.
+                Multiplication des AMAP, marchés, coopératives sur la région
+                grenobloise.
               </li>
               <li>
-                Population étudiante et active sensibilisée aux enjeux environnementaux, déjà prête
-                à payer un peu plus pour mieux consommer.
+                Population étudiante et active sensibilisée aux enjeux
+                environnementaux, déjà prête à payer un peu plus pour mieux
+                consommer.
               </li>
-              <li>Usage massif des applications de livraison &quot;classiques&quot;.</li>
               <li>
-                Besoin exprimé par les producteurs : vendre plus régulièrement, avec moins de
-                contraintes de vente directe.
+                Usage massif des applications de livraison
+                &quot;classiques&quot;.
+              </li>
+              <li>
+                Besoin exprimé par les producteurs : vendre plus régulièrement,
+                avec moins de contraintes de vente directe.
               </li>
             </ul>
           </article>
@@ -209,7 +252,7 @@ function HomePage() {
         </div>
       </section>
 
-      <section className="section" aria-label="Appels à l&apos;action">
+      <section className="section" aria-label="Appels à l'action">
         <div className="card-soft">
           <div className="two-column">
             <div>
@@ -218,8 +261,9 @@ function HomePage() {
                 Prêt à rejoindre les premiers utilisateurs de GrEco ?
               </h2>
               <p className="section-sub">
-                Que vous soyez consommateur ou producteur, vous pouvez dès maintenant manifester
-                votre intérêt pour être parmi les premiers à accéder à la plateforme.
+                Que vous soyez consommateur ou producteur, vous pouvez dès
+                maintenant manifester votre intérêt pour être parmi les premiers
+                à accéder à la plateforme.
               </p>
             </div>
             <div className="hero-actions">
@@ -238,4 +282,3 @@ function HomePage() {
 }
 
 export default HomePage;
-
