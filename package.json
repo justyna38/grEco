@@ -1,0 +1,22 @@
+{
+  "name": "greco-marketplace",
+  "version": "1.0.0",
+  "private": true,
+  "description": "GrEco – marketplace locale écoresponsable autour de Grenoble, construite avec React et Vite.",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "echo \"No linter configured\""
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-helmet-async": "^2.0.5",
+    "react-router-dom": "^6.28.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.4",
+    "vite": "^6.0.0"
+  }
+}
