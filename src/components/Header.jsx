@@ -1,11 +1,20 @@
 import { useState } from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink, useNavigate } from 'react-router-dom';
+import { useAuth } from '../context/AuthContext.jsx';
 
 function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const { isAuthenticated, user, logout } = useAuth();
+  const navigate = useNavigate();
 
   const toggleMenu = () => setMenuOpen((open) => !open);
   const closeMenu = () => setMenuOpen(false);
+
+  const handleLogout = () => {
+    logout();
+    closeMenu();
+    navigate('/');
+  };
 
   return (
     <header className="site-header">
@@ -38,6 +47,11 @@ function Header() {
               </NavLink>
             </li>
             <li>
+              <NavLink to="/produits" onClick={closeMenu}>
+                Produits
+              </NavLink>
+            </li>
+            <li>
               <NavLink to="/producteurs" onClick={closeMenu}>
                 Producteurs
               </NavLink>
@@ -61,6 +75,18 @@ function Header() {
               <NavLink to="/contact" className="nav-cta" onClick={closeMenu}>
                 Rejoindre GrEco
               </NavLink>
+            </li>
+            <li>
+              {isAuthenticated ? (
+                <button type="button" className="nav-account" onClick={handleLogout}>
+                  <span aria-hidden="true">·</span>
+                  <span>Se déconnecter</span>
+                </button>
+              ) : (
+                <NavLink to="/connexion" onClick={closeMenu}>
+                  Se connecter
+                </NavLink>
+              )}
             </li>
           </ul>
         </nav>

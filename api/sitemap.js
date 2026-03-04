@@ -4,6 +4,7 @@ const SITE_URL = 'https://gr-eco.vercel.app';
 const staticRoutes = [
   { path: '/', changefreq: 'weekly', priority: 1.0 },
   { path: '/marche', changefreq: 'weekly', priority: 0.8 },
+  { path: '/produits', changefreq: 'weekly', priority: 0.9 },
   { path: '/producteurs', changefreq: 'weekly', priority: 0.8 },
   { path: '/pour-les-producteurs', changefreq: 'monthly', priority: 0.6 },
   { path: '/blog', changefreq: 'weekly', priority: 0.7 },
@@ -14,7 +15,8 @@ const staticRoutes = [
   { path: '/impact-ecologique', changefreq: 'yearly', priority: 0.4 },
   { path: '/comment-ca-marche', changefreq: 'yearly', priority: 0.4 },
   { path: '/mentions-legales', changefreq: 'yearly', priority: 0.2 },
-  { path: '/confidentialite', changefreq: 'yearly', priority: 0.2 }
+  { path: '/confidentialite', changefreq: 'yearly', priority: 0.2 },
+  { path: '/connexion', changefreq: 'yearly', priority: 0.3 }
 ];
 
 // Slugs d'articles de blog (doivent rester synchronisés avec BlogPage/BlogArticlePage)
