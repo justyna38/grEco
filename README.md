@@ -34,4 +34,5 @@ npm run dev
 ```
 
 Puis ouvrir l’URL indiquée dans le terminal (par défaut `http://localhost:5173`).
+qscaqeafeafr"a
 
