@@ -9,7 +9,7 @@ function ImpactEcologiquePage() {
           name="description"
           content="Découvrez comment GrEco contribue à réduire l’empreinte carbone liée au transport alimentaire et à favoriser les circuits courts autour de Grenoble."
         />
-        <link rel="canonical" href="https://www.greco-local.fr/impact-ecologique" />
+        <link rel="canonical" href="https://gr-eco.vercel.app/impact-ecologique" />
       </Helmet>
 
       <header className="page-header">

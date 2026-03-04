@@ -9,7 +9,7 @@ function ConfidentialitePage() {
           name="description"
           content="Politique de confidentialité de GrEco : utilisation des données, cookies et respect de la vie privée."
         />
-        <link rel="canonical" href="https://www.greco-local.fr/confidentialite" />
+        <link rel="canonical" href="https://gr-eco.vercel.app/confidentialite" />
       </Helmet>
 
       <header className="page-header">

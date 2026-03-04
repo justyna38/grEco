@@ -78,7 +78,7 @@ function ProduitsPage() {
           name="description"
           content="Découvrez une sélection de produits locaux et écoresponsables disponibles sur le marché GrEco : fruits, pain, épicerie vrac et plus encore."
         />
-        <link rel="canonical" href="https://www.greco-local.fr/produits" />
+        <link rel="canonical" href="https://gr-eco.vercel.app/produits" />
       </Helmet>
 
       <header className="page-header">

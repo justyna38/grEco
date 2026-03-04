@@ -10,7 +10,7 @@ function MarchePage() {
           name="description"
           content="Découvrez le marché local GrEco : fruits, légumes, produits laitiers, pain, épicerie sèche et vrac issus de producteurs écoresponsables autour de Grenoble."
         />
-        <link rel="canonical" href="https://www.greco-local.fr/marche" />
+        <link rel="canonical" href="https://gr-eco.vercel.app/marche" />
       </Helmet>
 
       <header className="page-header">

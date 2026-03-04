@@ -10,7 +10,26 @@ function HomePage() {
           name="description"
           content="GrEco simplifie l&apos;accès aux producteurs et commerces écoresponsables situés à moins de 50 km de Grenoble. Commandez local, en quelques clics."
         />
-        <link rel="canonical" href="https://www.greco-local.fr/" />
+        <link rel="canonical" href="https://gr-eco.vercel.app/" />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'Organization',
+            name: 'GrEco',
+            url: 'https://gr-eco.vercel.app/',
+            description:
+              "Marketplace locale écoresponsable qui connecte les producteurs et commerces engagés de la métropole grenobloise avec les habitants.",
+            address: {
+              '@type': 'PostalAddress',
+              addressLocality: 'Grenoble',
+              addressCountry: 'FR'
+            },
+            areaServed: {
+              '@type': 'AdministrativeArea',
+              name: 'Métropole grenobloise'
+            }
+          })}
+        </script>
       </Helmet>
 
       <header className="page-header hero">

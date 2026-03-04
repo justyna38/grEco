@@ -67,7 +67,7 @@ function BlogArticlePage() {
       <Helmet>
         <title>{article.titre} – Blog GrEco</title>
         <meta name="description" content={article.description} />
-        <link rel="canonical" href={`https://www.greco-local.fr/blog/${slug}`} />
+        <link rel="canonical" href={`https://gr-eco.vercel.app/blog/${slug}`} />
       </Helmet>
 
       <header className="page-header">

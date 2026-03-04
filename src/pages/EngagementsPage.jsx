@@ -10,7 +10,7 @@ function EngagementsPage() {
           name="description"
           content="Découvrez les engagements de GrEco : circuits courts, meilleure rémunération des producteurs, transparence, et expérience utilisateur simple pour consommer local à Grenoble."
         />
-        <link rel="canonical" href="https://www.greco-local.fr/engagements" />
+        <link rel="canonical" href="https://gr-eco.vercel.app/engagements" />
       </Helmet>
 
       <header className="page-header">

@@ -37,7 +37,7 @@ function BlogPage() {
           name="description"
           content="Articles et ressources autour des circuits courts, de la consommation locale et de l’écologie du quotidien à Grenoble."
         />
-        <link rel="canonical" href="https://www.greco-local.fr/blog" />
+        <link rel="canonical" href="https://gr-eco.vercel.app/blog" />
       </Helmet>
 
       <header className="page-header">

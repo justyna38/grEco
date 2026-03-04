@@ -9,7 +9,7 @@ function MentionsLegalesPage() {
           name="description"
           content="Mentions légales du site GrEco, marketplace locale écoresponsable dédiée à la métropole grenobloise."
         />
-        <link rel="canonical" href="https://www.greco-local.fr/mentions-legales" />
+        <link rel="canonical" href="https://gr-eco.vercel.app/mentions-legales" />
       </Helmet>
 
       <header className="page-header">
