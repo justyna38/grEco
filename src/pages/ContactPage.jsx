@@ -2,7 +2,7 @@ import { Helmet } from 'react-helmet-async';
 
 function ContactPage() {
   return (
-    <div className="page">
+    <div className="page" itemScope itemType="https://schema.org/Organization">
       <Helmet>
         <title>Contact – GrEco</title>
         <meta
@@ -10,6 +10,31 @@ function ContactPage() {
           content="Contactez l’équipe GrEco pour toute question, partenariat ou demande d’inscription en tant que producteur autour de Grenoble."
         />
         <link rel="canonical" href="https://gr-eco.vercel.app/contact" />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'Organization',
+            name: 'GrEco',
+            url: 'https://gr-eco.vercel.app/',
+            address: {
+              '@type': 'PostalAddress',
+              addressLocality: 'Grenoble',
+              addressRegion: 'Auvergne-Rhône-Alpes',
+              addressCountry: 'FR'
+            },
+            areaServed: {
+              '@type': 'AdministrativeArea',
+              name: 'Métropole grenobloise'
+            },
+            contactPoint: [
+              {
+                '@type': 'ContactPoint',
+                contactType: 'customer support',
+                availableLanguage: ['fr']
+              }
+            ]
+          })}
+        </script>
       </Helmet>
 
       <header className="page-header">
