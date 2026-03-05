@@ -161,12 +161,16 @@ function ProduitsPage() {
 
         <div className="grid grid-3 products-grid">
           {PRODUCTS.map((product) => (
-            <article key={product.id} className="card product-card">
+            <article key={product.id} id={product.id} className="card product-card">
               <div className="product-image-wrapper">
                 <img src={product.image} alt={product.name} loading="lazy" />
               </div>
               <div className="product-content">
-                <h3 className="card-title">{product.name}</h3>
+                <h3 className="card-title">
+                  <Link to={`/produits#${product.id}`} className="product-link">
+                    {product.name}
+                  </Link>
+                </h3>
                 <p className="card-sub">
                   <span className="product-category">{product.category}</span> ·{' '}
                   <span className="product-origin">{product.origin}</span>

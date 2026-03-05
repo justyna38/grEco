@@ -1,0 +1,66 @@
+[
+  {
+    "id": "oranges-bio",
+    "name": "Oranges bio de la vallée",
+    "category": "Fruits",
+    "price": "3,90 € / kg",
+    "origin": "Vallée du Grésivaudan (38)",
+    "url": "https://gr-eco.vercel.app/produits#oranges-bio",
+    "tags": ["Bio", "Circuit court"]
+  },
+  {
+    "id": "citrons-italie",
+    "name": "Citrons jaunes non traités",
+    "category": "Fruits",
+    "price": "4,20 € / kg",
+    "origin": "Producteur engagé, Italie du Sud",
+    "url": "https://gr-eco.vercel.app/produits#citrons-italie",
+    "tags": ["Zéro traitement après récolte"]
+  },
+  {
+    "id": "pain-cereales",
+    "name": "Pain aux céréales locales",
+    "category": "Boulangerie",
+    "price": "4,80 € / pièce",
+    "origin": "Boulangerie des Alpes, Grenoble",
+    "url": "https://gr-eco.vercel.app/produits#pain-cereales",
+    "tags": ["Farines locales", "Levain naturel"]
+  },
+  {
+    "id": "kiwis-isere",
+    "name": "Kiwis de l’Isère",
+    "category": "Fruits",
+    "price": "3,60 € / barquette",
+    "origin": "Ferme des Écrins (38)",
+    "url": "https://gr-eco.vercel.app/produits#kiwis-isere",
+    "tags": ["Récolte de saison"]
+  },
+  {
+    "id": "bananes-equitable",
+    "name": "Bananes équitables",
+    "category": "Fruits",
+    "price": "2,95 € / kg",
+    "origin": "Coopérative engagée, commerce équitable",
+    "url": "https://gr-eco.vercel.app/produits#bananes-equitable",
+    "tags": ["Équitable", "Transport optimisé"]
+  },
+  {
+    "id": "legumineuses-vrac",
+    "name": "Mélange de légumineuses en vrac",
+    "category": "Épicerie & vrac",
+    "price": "6,50 € / kg",
+    "origin": "Producteurs partenaires en France",
+    "url": "https://gr-eco.vercel.app/produits#legumineuses-vrac",
+    "tags": ["Zéro emballage", "Riche en protéines"]
+  },
+  {
+    "id": "pommes-vercors",
+    "name": "Pommes du Vercors",
+    "category": "Fruits",
+    "price": "2,80 € / kg",
+    "origin": "Vergers du Vercors (38)",
+    "url": "https://gr-eco.vercel.app/produits#pommes-vercors",
+    "tags": ["Culture raisonnée"]
+  }
+]
+
