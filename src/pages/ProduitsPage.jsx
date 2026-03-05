@@ -1,5 +1,8 @@
+import { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
+import { Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext.jsx';
+import { useCart } from '../context/CartContext.jsx';
 
 const PRODUCTS = [
   {
@@ -69,6 +72,46 @@ const PRODUCTS = [
 
 function ProduitsPage() {
   const { user } = useAuth();
+  const { addToCart, cartCount } = useCart();
+
+  const [quantities, setQuantities] = useState(() =>
+    PRODUCTS.reduce((accumulator, product) => {
+      accumulator[product.id] = 1;
+      return accumulator;
+    }, {})
+  );
+
+  const handleQuantityChange = (productId, delta) => {
+    setQuantities((previous) => {
+      const current = previous[productId] ?? 1;
+      const next = Math.max(1, current + delta);
+      return {
+        ...previous,
+        [productId]: next
+      };
+    });
+  };
+
+  const handleAddToCart = (product) => {
+    const quantity = quantities[product.id] ?? 1;
+
+    for (let index = 0; index < quantity; index += 1) {
+      addToCart(product);
+    }
+
+    // Événement de funnel pour le suivi du parcours e-commerce (add_to_cart)
+    if (typeof window !== 'undefined') {
+      // Remplacez ce console.log par un envoi réel à votre outil d'analytics si besoin
+      // Exemple : window.gtag('event', 'add_to_cart', { item_id: product.id });
+      // Pour la démo, on se contente de tracer dans la console.
+      // eslint-disable-next-line no-console
+      console.log('funnel:add_to_cart', {
+        step: 'add_to_cart',
+        productId: product.id,
+        name: product.name
+      });
+    }
+  };
 
   return (
     <div className="page">
@@ -112,12 +155,6 @@ function ProduitsPage() {
       </section>
 
       <section className="section">
-        <div className="section-header">
-          <h2 className="section-title">Sélection de produits</h2>
-          <p className="section-sub">
-            Une base parfaite pour simuler un panier et tester un futur tunnel de commande.
-          </p>
-        </div>
 
         <div className="grid grid-3 products-grid">
           {PRODUCTS.map((product) => (
@@ -139,8 +176,31 @@ function ProduitsPage() {
                     </span>
                   ))}
                 </div>
-                <button type="button" className="btn btn-primary product-btn" disabled>
-                  Ajouter au panier (démo)
+                <div className="product-qty-row">
+                  <button
+                    type="button"
+                    className="btn btn-ghost product-qty-btn"
+                    onClick={() => handleQuantityChange(product.id, -1)}
+                  >
+                    −
+                  </button>
+                  <span className="product-qty-value">
+                    {quantities[product.id] ?? 1}
+                  </span>
+                  <button
+                    type="button"
+                    className="btn btn-ghost product-qty-btn"
+                    onClick={() => handleQuantityChange(product.id, 1)}
+                  >
+                    +
+                  </button>
+                </div>
+                <button
+                  type="button"
+                  className="btn btn-primary product-btn"
+                  onClick={() => handleAddToCart(product)}
+                >
+                  Ajouter {quantities[product.id] ?? 1} au panier
                 </button>
               </div>
             </article>

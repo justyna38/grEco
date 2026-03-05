@@ -1,11 +1,13 @@
 import { useState } from 'react';
 import { Link, NavLink, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext.jsx';
+import { useCart } from '../context/CartContext.jsx';
 
 function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const { isAuthenticated, user, logout } = useAuth();
   const navigate = useNavigate();
+  const { cartCount } = useCart();
 
   const toggleMenu = () => setMenuOpen((open) => !open);
   const closeMenu = () => setMenuOpen(false);
@@ -72,8 +74,40 @@ function Header() {
               </NavLink>
             </li>
             <li>
-              <NavLink to="/contact" className="nav-cta" onClick={closeMenu}>
-                Rejoindre GrEco
+              <NavLink
+                to="/panier"
+                onClick={closeMenu}
+                className="nav-cart"
+                aria-label={
+                  cartCount > 0
+                    ? `Panier (${cartCount} article${cartCount > 1 ? 's' : ''})`
+                    : 'Panier (vide)'
+                }
+              >
+                <span className="nav-cart-icon" aria-hidden="true">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    width="25"
+                    height="25"
+                    aria-hidden="true"
+                    focusable="false"
+                  >
+                    <path
+                      d="M6.2 5.5a1 1 0 0 1 .98-.8h1.03a2.75 2.75 0 0 1 5.58 0h1.03a1 1 0 0 1 .98.8l1.1 5.5A3.75 3.75 0 0 1 13.24 15h-2.5A3.75 3.75 0 0 1 5.1 11l1.1-5.5Zm2.21.7-0.84 4.2A1.75 1.75 0 0 0 10.74 13h2.5a1.75 1.75 0 0 0 1.67-2.6l-0.84-4.2h-0.92a2.75 2.75 0 0 1-4.22 0H8.41Z"
+                      fill="currentColor"
+                    />
+                    <path
+                      d="M9.25 18.25a1 1 0 1 1-2 0 1 1 0 0 1 2 0Zm7.5 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z"
+                      fill="currentColor"
+                    />
+                  </svg>
+                </span>
+                {cartCount > 0 && (
+                  <span className="nav-cart-badge">
+                    {cartCount}
+                  </span>
+                )}
               </NavLink>
             </li>
             <li>

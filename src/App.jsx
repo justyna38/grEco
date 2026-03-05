@@ -19,6 +19,9 @@ import ConfidentialitePage from './pages/ConfidentialitePage.jsx';
 import NotFoundPage from './pages/NotFoundPage.jsx';
 import LoginPage from './pages/LoginPage.jsx';
 import ProduitsPage from './pages/ProduitsPage.jsx';
+import PanierPage from './pages/PanierPage.jsx';
+import CheckoutPage from './pages/CheckoutPage.jsx';
+import RequireAuth from './components/RequireAuth.jsx';
 
 const siteUrl = 'https://gr-eco.vercel.app';
 
@@ -68,6 +71,15 @@ function App() {
           <Route path="/marche" element={<MarchePage />} />
           <Route path="/connexion" element={<LoginPage />} />
           <Route path="/produits" element={<ProduitsPage />} />
+          <Route path="/panier" element={<PanierPage />} />
+          <Route
+            path="/checkout"
+            element={
+              <RequireAuth>
+                <CheckoutPage />
+              </RequireAuth>
+            }
+          />
           <Route path="/producteurs" element={<ProducteursPage />} />
           <Route path="/producteurs/:id" element={<ProducteurDetailPage />} />
           <Route path="/comment-ca-marche" element={<CommentCaMarchePage />} />

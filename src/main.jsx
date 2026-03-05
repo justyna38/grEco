@@ -6,15 +6,18 @@ import App from './App.jsx';
 import './styles/global.css';
 import { AuthProvider } from './context/AuthContext.jsx';
 import { CookieConsentProvider } from './context/CookieConsentContext.jsx';
+import { CartProvider } from './context/CartContext.jsx';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <HelmetProvider>
       <BrowserRouter>
         <AuthProvider>
-          <CookieConsentProvider>
-            <App />
-          </CookieConsentProvider>
+          <CartProvider>
+            <CookieConsentProvider>
+              <App />
+            </CookieConsentProvider>
+          </CartProvider>
         </AuthProvider>
       </BrowserRouter>
     </HelmetProvider>
