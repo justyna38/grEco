@@ -1,28 +1,33 @@
 import { Helmet } from 'react-helmet-async';
 import { Link, useNavigate } from 'react-router-dom';
 import { useCart } from '../context/CartContext.jsx';
+import { pushDataLayerEvent } from '../analytics/dataLayer.js';
+import { usePageView } from '../analytics/usePageView.js';
 
 function PanierPage() {
   const { cartItems, cartCount, cartTotal, addToCart, removeFromCart, clearCart } = useCart();
   const navigate = useNavigate();
+
+  usePageView({
+    pageType: 'cart',
+    pageName: 'Panier',
+    pagePath: '/panier'
+  });
 
   const handleBeginCheckout = () => {
     if (cartCount === 0) {
       return;
     }
 
-    if (typeof window !== 'undefined') {
-      // Événement de funnel pour le début du paiement (begin_checkout)
-      // eslint-disable-next-line no-console
-      console.log('funnel:begin_checkout', {
-        step: 'begin_checkout',
-        items: cartItems.map((item) => ({
-          id: item.id,
-          name: item.name,
-          quantity: item.quantity
-        }))
-      });
-    }
+    pushDataLayerEvent('begin_checkout', {
+      items: cartItems.map((item) => ({
+        id: item.id,
+        name: item.name,
+        quantity: item.quantity
+      })),
+      items_count: cartCount,
+      cart_total: Number(cartTotal.toFixed(2))
+    });
 
     navigate('/checkout');
   };

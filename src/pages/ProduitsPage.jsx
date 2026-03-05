@@ -3,6 +3,8 @@ import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext.jsx';
 import { useCart } from '../context/CartContext.jsx';
+import { pushDataLayerEvent } from '../analytics/dataLayer.js';
+import { usePageView } from '../analytics/usePageView.js';
 
 const PRODUCTS = [
   {
@@ -74,6 +76,12 @@ function ProduitsPage() {
   const { user } = useAuth();
   const { addToCart, cartCount } = useCart();
 
+  usePageView({
+    pageType: 'product_list',
+    pageName: 'Produits à acheter',
+    pagePath: '/produits'
+  });
+
   const [quantities, setQuantities] = useState(() =>
     PRODUCTS.reduce((accumulator, product) => {
       accumulator[product.id] = 1;
@@ -99,18 +107,13 @@ function ProduitsPage() {
       addToCart(product);
     }
 
-    // Événement de funnel pour le suivi du parcours e-commerce (add_to_cart)
-    if (typeof window !== 'undefined') {
-      // Remplacez ce console.log par un envoi réel à votre outil d'analytics si besoin
-      // Exemple : window.gtag('event', 'add_to_cart', { item_id: product.id });
-      // Pour la démo, on se contente de tracer dans la console.
-      // eslint-disable-next-line no-console
-      console.log('funnel:add_to_cart', {
-        step: 'add_to_cart',
-        productId: product.id,
-        name: product.name
-      });
-    }
+    pushDataLayerEvent('add_to_cart', {
+      product_id: product.id,
+      product_name: product.name,
+      product_category: product.category,
+      product_price: product.price,
+      quantity
+    });
   };
 
   return (

@@ -2,10 +2,18 @@ import { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import { useCart } from '../context/CartContext.jsx';
+import { pushDataLayerEvent } from '../analytics/dataLayer.js';
+import { usePageView } from '../analytics/usePageView.js';
 
 function CheckoutPage() {
   const { cartItems, cartCount, cartTotal, clearCart } = useCart();
   const [completed, setCompleted] = useState(false);
+
+  usePageView({
+    pageType: 'checkout',
+    pageName: 'Finaliser vos achats',
+    pagePath: '/checkout'
+  });
 
   const hasItems = cartItems.length > 0;
 
@@ -14,18 +22,15 @@ function CheckoutPage() {
       return;
     }
 
-    if (typeof window !== 'undefined') {
-      // Événement de funnel pour l'achat finalisé (purchase)
-      // eslint-disable-next-line no-console
-      console.log('funnel:purchase', {
-        step: 'purchase',
-        items: cartItems.map((item) => ({
-          id: item.id,
-          name: item.name,
-          quantity: item.quantity
-        }))
-      });
-    }
+    pushDataLayerEvent('purchase', {
+      items: cartItems.map((item) => ({
+        id: item.id,
+        name: item.name,
+        quantity: item.quantity
+      })),
+      items_count: cartCount,
+      cart_total: Number(cartTotal.toFixed(2))
+    });
 
     clearCart();
     setCompleted(true);
