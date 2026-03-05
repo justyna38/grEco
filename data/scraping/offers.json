@@ -1,5 +1,76 @@
 {
-  "generatedAt": "2026-03-05T14:05:00.485Z",
-  "totalOffers": 0,
-  "offers": []
+  "generatedAt": "2026-03-05T14:12:24.041Z",
+  "totalOffers": 7,
+  "offers": [
+    {
+      "siteId": "greco-catalogue-json",
+      "id": "oranges-bio",
+      "name": "Oranges bio de la vallée",
+      "category": "Fruits",
+      "priceText": "3,90 € / kg",
+      "origin": "Vallée du Grésivaudan (38)",
+      "url": "https://gr-eco.vercel.app/produits#oranges-bio",
+      "scrapedAt": "2026-03-05T14:12:24.040Z"
+    },
+    {
+      "siteId": "greco-catalogue-json",
+      "id": "citrons-italie",
+      "name": "Citrons jaunes non traités",
+      "category": "Fruits",
+      "priceText": "4,20 € / kg",
+      "origin": "Producteur engagé, Italie du Sud",
+      "url": "https://gr-eco.vercel.app/produits#citrons-italie",
+      "scrapedAt": "2026-03-05T14:12:24.040Z"
+    },
+    {
+      "siteId": "greco-catalogue-json",
+      "id": "pain-cereales",
+      "name": "Pain aux céréales locales",
+      "category": "Boulangerie",
+      "priceText": "4,80 € / pièce",
+      "origin": "Boulangerie des Alpes, Grenoble",
+      "url": "https://gr-eco.vercel.app/produits#pain-cereales",
+      "scrapedAt": "2026-03-05T14:12:24.040Z"
+    },
+    {
+      "siteId": "greco-catalogue-json",
+      "id": "kiwis-isere",
+      "name": "Kiwis de l’Isère",
+      "category": "Fruits",
+      "priceText": "3,60 € / barquette",
+      "origin": "Ferme des Écrins (38)",
+      "url": "https://gr-eco.vercel.app/produits#kiwis-isere",
+      "scrapedAt": "2026-03-05T14:12:24.040Z"
+    },
+    {
+      "siteId": "greco-catalogue-json",
+      "id": "bananes-equitable",
+      "name": "Bananes équitables",
+      "category": "Fruits",
+      "priceText": "2,95 € / kg",
+      "origin": "Coopérative engagée, commerce équitable",
+      "url": "https://gr-eco.vercel.app/produits#bananes-equitable",
+      "scrapedAt": "2026-03-05T14:12:24.040Z"
+    },
+    {
+      "siteId": "greco-catalogue-json",
+      "id": "legumineuses-vrac",
+      "name": "Mélange de légumineuses en vrac",
+      "category": "Épicerie & vrac",
+      "priceText": "6,50 € / kg",
+      "origin": "Producteurs partenaires en France",
+      "url": "https://gr-eco.vercel.app/produits#legumineuses-vrac",
+      "scrapedAt": "2026-03-05T14:12:24.040Z"
+    },
+    {
+      "siteId": "greco-catalogue-json",
+      "id": "pommes-vercors",
+      "name": "Pommes du Vercors",
+      "category": "Fruits",
+      "priceText": "2,80 € / kg",
+      "origin": "Vergers du Vercors (38)",
+      "url": "https://gr-eco.vercel.app/produits#pommes-vercors",
+      "scrapedAt": "2026-03-05T14:12:24.040Z"
+    }
+  ]
 }

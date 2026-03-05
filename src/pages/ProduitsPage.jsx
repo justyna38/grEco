@@ -125,6 +125,33 @@ function ProduitsPage() {
           content="Découvrez une sélection de produits locaux et écoresponsables disponibles sur le marché GrEco : fruits, pain, épicerie vrac et plus encore."
         />
         <link rel="canonical" href="https://gr-eco.vercel.app/produits" />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'ItemList',
+            name: 'Produits écoresponsables disponibles sur GrEco',
+            url: 'https://gr-eco.vercel.app/produits',
+            itemListElement: PRODUCTS.map((product, index) => ({
+              '@type': 'ListItem',
+              position: index + 1,
+              url: `https://gr-eco.vercel.app/produits#${product.id}`,
+              item: {
+                '@type': 'Product',
+                name: product.name,
+                image: `https://gr-eco.vercel.app${product.image}`,
+                category: product.category,
+                description: `Produit ${product.category.toLowerCase()} local et écoresponsable disponible sur GrEco.`,
+                offers: {
+                  '@type': 'Offer',
+                  price: product.price,
+                  priceCurrency: 'EUR',
+                  availability: 'https://schema.org/PreOrder',
+                  url: `https://gr-eco.vercel.app/produits#${product.id}`
+                }
+              }
+            }))
+          })}
+        </script>
       </Helmet>
 
       <header className="page-header">
