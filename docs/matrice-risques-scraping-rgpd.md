@@ -1,3 +1,49 @@
+# Matrice de risques – Scraping & RGPD (GrEco)
+
+## Contexte
+GrEco intègre une brique de scraping de démonstration (`scripts/scraping/grecoScraper.js`) pour illustrer :
+- **agrégation/veille** à partir de contenus publics
+- contraintes **robots.txt**, **rate limiting**, **journalisation**, **minimisation**
+
+## Hypothèses (démo)
+- Les sources ciblées sont **compatibles** avec un usage de démonstration.
+- La collecte exclut toute **donnée personnelle**.
+- La finalité est **B2B** (veille marché / enrichissement catalogue) et documentée.
+
+## Tableau des risques
+
+| Risque | Description | Probabilité | Impact | Mesures de réduction (Privacy-by-Design) |
+|---|---|---:|---:|---|
+| Non-respect robots.txt | Scraper une ressource interdite | M | H | Vérification robots via `robots-parser`, refus si interdit, approche prudente |
+| Non-respect CGU | CGU interdisant l’extraction | M | H | Revue des CGU, privilégier API/accord, limiter au strict nécessaire |
+| Charge serveur (DoS) | Trop de requêtes / cadence élevée | L | H | Rate limiting (délai), limitation du nombre d’items, pas de parallélisme |
+| Données personnelles | Collecte indirecte de PII | L | H | Minimisation (champs “offre”), filtrage, pas de champs libres, revue régulière |
+| Droit des bases de données | Extraction substantielle | L/M | H | Échantillonnage, pas de collecte massive, stratégie “listing minimal”, justification |
+| Propriété intellectuelle | Réutilisation de contenus protégés | M | M/H | Conserver uniquement “facts” (nom/prix/url), pas de reproduction de textes longs |
+| Traçabilité/logs excessifs | Logs trop détaillés / conservés trop longtemps | M | M | Logs techniques minimaux, rotation/suppression (à implémenter en prod) |
+| Sécurité | Exposition de fichiers collectés | L | M | Répertoire dédié, contrôle d’accès, aucune PII, monitoring |
+
+## Données collectées (minimisation)
+Champs conservés (exemple):
+- `id`, `name`, `category`, `priceText`, `origin`, `url`, `scrapedAt`, `siteId`
+
+Exclus explicitement:
+- données de contact, noms de personnes, emails, numéros, avis nominatif, etc.
+
+## Journalisation
+Le scraping journalise :
+- horodatage
+- URL appelée
+- statut/erreur
+
+## Rate limiting
+Délais intentionnels entre requêtes pour limiter l’impact sur les sources.
+
+## Base légale (à cadrer en “vraie prod”)
+Selon les cas :
+- accord contractuel / API officielle
+- intérêt légitime (documenté) pour veille B2B, sous réserve de minimisation et respect CGU/robots
+
 # Matrice de risques – GrEco (exemple pédagogique)
 
 Ce document illustre, à titre d’exemple, une analyse des risques liée aux traitements de données prévus dans une version opérationnelle de GrEco, incluant la brique de scraping / veille concurrentielle.  

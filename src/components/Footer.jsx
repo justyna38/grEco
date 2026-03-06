@@ -1,7 +1,9 @@
 import { Link } from 'react-router-dom';
+import { useCookieConsent } from '../context/CookieConsentContext.jsx';
 
 function Footer() {
   const currentYear = new Date().getFullYear();
+  const { openPreferences } = useCookieConsent();
 
   return (
     <footer className="site-footer">
@@ -43,6 +45,11 @@ function Footer() {
             </li>
             <li>
               <Link to="/confidentialite">Confidentialité</Link>
+            </li>
+            <li>
+              <button type="button" className="link-button" onClick={openPreferences}>
+                Préférences cookies
+              </button>
             </li>
             <li>
               <Link to="/faq">FAQ</Link>

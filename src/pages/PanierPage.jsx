@@ -2,17 +2,10 @@ import { Helmet } from 'react-helmet-async';
 import { Link, useNavigate } from 'react-router-dom';
 import { useCart } from '../context/CartContext.jsx';
 import { pushDataLayerEvent } from '../analytics/dataLayer.js';
-import { usePageView } from '../analytics/usePageView.js';
 
 function PanierPage() {
   const { cartItems, cartCount, cartTotal, addToCart, removeFromCart, clearCart } = useCart();
   const navigate = useNavigate();
-
-  usePageView({
-    pageType: 'cart',
-    pageName: 'Panier',
-    pagePath: '/panier'
-  });
 
   const handleBeginCheckout = () => {
     if (cartCount === 0) {
@@ -42,6 +35,7 @@ function PanierPage() {
           name="description"
           content="Consultez votre liste de courses GrEco, ajustez les quantités puis passez au paiement pour finaliser vos achats."
         />
+        <meta name="robots" content="noindex,nofollow" />
         <link rel="canonical" href="https://gr-eco.vercel.app/panier" />
       </Helmet>
 

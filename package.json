@@ -5,6 +5,8 @@
   "description": "GrEco – marketplace locale écoresponsable autour de Grenoble, construite avec React et Vite.",
   "scripts": {
     "dev": "vite",
+    "generate:sitemap": "node scripts/generateSitemap.mjs",
+    "prebuild": "npm run generate:sitemap",
     "build": "vite build",
     "preview": "vite preview",
     "lint": "echo \"No linter configured\"",

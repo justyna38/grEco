@@ -42,6 +42,7 @@ function LoginPage() {
           name="description"
           content="Connectez-vous à votre espace GrEco pour accéder au marché de produits locaux écoresponsables."
         />
+        <meta name="robots" content="noindex,nofollow" />
         <link rel="canonical" href="https://gr-eco.vercel.app/connexion" />
       </Helmet>
 

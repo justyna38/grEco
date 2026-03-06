@@ -1,40 +1,6 @@
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
-
-const mockProducteurs = [
-  {
-    id: 'ferme-des-ecrins',
-    nom: 'Ferme des Écrins',
-    type: 'Maraîchage bio',
-    localisation: 'Saint-Martin-d’Hères',
-    distance: '7 km',
-    labels: ['AB', 'Circuit court'],
-    resume: 'Légumes de saison cultivés en agriculture biologique.',
-    image: '/images/bio.jpg',
-  },
-  {
-    id: 'boulangerie-des-alpes',
-    nom: 'Boulangerie des Alpes',
-    type: 'Boulangerie artisanale',
-    localisation: 'Grenoble',
-    distance: '2 km',
-    labels: ['Farines locales', 'Four à bois'],
-    resume:
-      'Pains au levain pétris et cuits sur place avec des farines de la région.',
-    image: '/images/boulangerie-des-alpes.jpg',
-  },
-  {
-    id: 'fromagerie-du-vercors',
-    nom: 'Fromagerie du Vercors',
-    type: 'Fromages & produits laitiers',
-    localisation: 'Vercors',
-    distance: '35 km',
-    labels: ['Local', 'Pâturage'],
-    resume:
-      'Fromages de montagne issus d’un élevage respectueux du bien-être animal.',
-    image: '/images/fromagerie.jpg',
-  },
-];
+import { producteursList } from '../data/producteurs.mjs';
 
 function ProducteursPage() {
   return (
@@ -90,7 +56,7 @@ function ProducteursPage() {
         </div>
 
         <div className="grid grid-3 products-grid">
-          {mockProducteurs.map((p) => (
+          {producteursList.map((p) => (
             <article key={p.id} className="card product-card producer-card">
               <div className="product-image-wrapper">
                 <img

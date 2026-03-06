@@ -1,6 +1,8 @@
 import { Routes, Route } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import Layout from './components/Layout.jsx';
+import GoogleAnalytics from './analytics/GoogleAnalytics.jsx';
+import AnalyticsManager from './analytics/AnalyticsManager.jsx';
 import HomePage from './pages/HomePage.jsx';
 import MarchePage from './pages/MarchePage.jsx';
 import ProducteursPage from './pages/ProducteursPage.jsx';
@@ -22,12 +24,15 @@ import ProduitsPage from './pages/ProduitsPage.jsx';
 import PanierPage from './pages/PanierPage.jsx';
 import CheckoutPage from './pages/CheckoutPage.jsx';
 import RequireAuth from './components/RequireAuth.jsx';
+import KpiDashboardPage from './pages/KpiDashboardPage.jsx';
 
 const siteUrl = 'https://gr-eco.vercel.app';
 
 function App() {
   return (
     <>
+      <GoogleAnalytics />
+      <AnalyticsManager />
       <Helmet>
         <html lang="fr" />
         <meta
@@ -93,6 +98,7 @@ function App() {
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/mentions-legales" element={<MentionsLegalesPage />} />
           <Route path="/confidentialite" element={<ConfidentialitePage />} />
+          <Route path="/kpi" element={<KpiDashboardPage />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </Layout>

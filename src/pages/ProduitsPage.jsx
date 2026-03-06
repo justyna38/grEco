@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext.jsx';
 import { useCart } from '../context/CartContext.jsx';
 import { pushDataLayerEvent } from '../analytics/dataLayer.js';
-import { usePageView } from '../analytics/usePageView.js';
 
 const PRODUCTS = [
   {
@@ -75,12 +74,6 @@ const PRODUCTS = [
 function ProduitsPage() {
   const { user } = useAuth();
   const { addToCart, cartCount } = useCart();
-
-  usePageView({
-    pageType: 'product_list',
-    pageName: 'Produits à acheter',
-    pagePath: '/produits'
-  });
 
   const [quantities, setQuantities] = useState(() =>
     PRODUCTS.reduce((accumulator, product) => {

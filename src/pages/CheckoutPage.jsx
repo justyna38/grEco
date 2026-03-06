@@ -3,17 +3,10 @@ import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import { useCart } from '../context/CartContext.jsx';
 import { pushDataLayerEvent } from '../analytics/dataLayer.js';
-import { usePageView } from '../analytics/usePageView.js';
 
 function CheckoutPage() {
   const { cartItems, cartCount, cartTotal, clearCart } = useCart();
   const [completed, setCompleted] = useState(false);
-
-  usePageView({
-    pageType: 'checkout',
-    pageName: 'Finaliser vos achats',
-    pagePath: '/checkout'
-  });
 
   const hasItems = cartItems.length > 0;
 
@@ -44,6 +37,7 @@ function CheckoutPage() {
           name="description"
           content="Confirmez votre commande de produits locaux écoresponsables sur GrEco."
         />
+        <meta name="robots" content="noindex,nofollow" />
         <link rel="canonical" href="https://gr-eco.vercel.app/checkout" />
       </Helmet>
 

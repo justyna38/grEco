@@ -1,4 +1,5 @@
 import { Helmet } from 'react-helmet-async';
+import { Link } from 'react-router-dom';
 
 function MentionsLegalesPage() {
   return (
@@ -16,21 +17,23 @@ function MentionsLegalesPage() {
         <p className="page-kicker">Mentions légales</p>
         <h1 className="page-title">Mentions légales du site GrEco.</h1>
         <p className="page-lead">
-          Les informations ci-dessous sont fournies à titre d&apos;exemple pour la maquette du
-          site. Elles devront être complétées et validées juridiquement avant mise en production.
+          Cette plateforme est une démonstration réalisée dans le cadre d&apos;un hackathon (M2 IW).
+          Les informations ci-dessous structurent les éléments attendus pour une mise en ligne
+          conforme. Elles doivent être adaptées et validées avant une exploitation commerciale.
         </p>
       </header>
 
       <section className="section">
         <article className="card-soft">
           <h2 className="section-title">Éditeur du site</h2>
-          <p className="section-sub">
-            GrEco, marketplace locale écoresponsable (structure à préciser : entreprise, association...).
-          </p>
+          <p className="section-sub">Projet GrEco (équipe hackathon – démonstration).</p>
           <ul className="list-muted">
-            <li>Dénomination sociale : GrEco (à compléter)</li>
-            <li>Adresse : Grenoble, France (à compléter)</li>
-            <li>Contact : adresse e-mail ou téléphone (à compléter)</li>
+            <li>Nom du projet : GrEco</li>
+            <li>Zone : Métropole grenobloise (Grenoble – Isère)</li>
+            <li>
+              Contact : <a href="mailto:demo@greco.local">demo@greco.local</a> (adresse de
+              démonstration)
+            </li>
           </ul>
         </article>
       </section>
@@ -38,12 +41,35 @@ function MentionsLegalesPage() {
       <section className="section">
         <article className="card-soft">
           <h2 className="section-title">Hébergement</h2>
-          <p className="section-sub">Les informations relatives à l&apos;hébergeur sont à préciser.</p>
+          <p className="section-sub">
+            Le site est déployé sur une plateforme d&apos;hébergement cloud (type Vercel) assurant le
+            chiffrement HTTPS et la distribution via CDN.
+          </p>
           <ul className="list-muted">
-            <li>Nom de l&apos;hébergeur</li>
-            <li>Adresse postale</li>
-            <li>Coordonnées</li>
+            <li>Plateforme : Vercel (déploiement)</li>
+            <li>Service : hébergement de pages statiques et CDN</li>
           </ul>
+        </article>
+      </section>
+
+      <section className="section">
+        <article className="card-soft">
+          <h2 className="section-title">Propriété intellectuelle</h2>
+          <p className="section-sub">
+            Les contenus (textes, maquette, design) de cette démonstration sont destinés à un usage
+            pédagogique. Toute réutilisation doit être autorisée par l&apos;équipe projet.
+          </p>
+        </article>
+      </section>
+
+      <section className="section">
+        <article className="card-soft">
+          <h2 className="section-title">Données personnelles & cookies</h2>
+          <p className="section-sub">
+            Les traitements de données et la gestion des cookies sont détaillés dans la{' '}
+            <Link to="/confidentialite">politique de confidentialité</Link>. Les cookies de mesure
+            d&apos;audience ne sont activés qu&apos;après consentement explicite.
+          </p>
         </article>
       </section>
     </div>

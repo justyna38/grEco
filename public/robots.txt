@@ -1,5 +1,10 @@
 User-agent: *
 Allow: /
 
+Disallow: /connexion
+Disallow: /panier
+Disallow: /checkout
+Disallow: /kpi
+
 Sitemap: https://gr-eco.vercel.app/sitemap.xml
 

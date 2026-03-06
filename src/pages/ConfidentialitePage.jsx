@@ -100,24 +100,29 @@ function ConfidentialitePage() {
         <article className="card-soft">
           <h2 className="section-title">4. Cookies et mesure d&apos;audience</h2>
           <p className="section-sub">
-            GrEco utilise, dans cette maquette, une couche d&apos;événements techniques pour suivre
-            les pages consultées et comprendre l&apos;usage global du site.
+            GrEco utilise une couche d&apos;événements techniques (<code>window.dataLayer</code>) et
+            peut activer une solution de mesure d&apos;audience (GA4) afin de comprendre l&apos;usage
+            global du site et améliorer l&apos;expérience.
           </p>
           <ul className="list-muted">
             <li>
-              La couche <code>window.dataLayer</code> et le hook <code>usePageView</code> envoient
-              des événements de navigation (type de page, chemin, etc.) sans contenu libre
-              saisi par l&apos;utilisateur.
+              La couche <code>window.dataLayer</code> envoie des événements de navigation (type de
+              page, chemin, etc.) sans contenu libre saisi par l&apos;utilisateur.
             </li>
             <li>
-              Une solution de gestion du consentement (par exemple via un contexte React
-              tel que <code>CookieConsentContext</code>) peut être utilisée pour ne déclencher
-              certains scripts qu&apos;après accord de l&apos;utilisateur.
+              Le bandeau de consentement enregistre le choix dans un cookie{' '}
+              <code>greco_cookie_consent</code>. Les scripts analytics (Google Analytics 4) ne sont
+              injectés <strong>qu&apos;après opt-in</strong>. En cas de refus, aucun cookie
+              d&apos;analyse n&apos;est déposé et aucune requête analytics n&apos;est envoyée.
             </li>
             <li>
               Dans une version réelle, les paramètres de l&apos;outil d&apos;analytics devraient être
               configurés pour limiter la portée des données (pseudonymisation d&apos;IP, durée de
               conservation courte, aucune réutilisation marketing sans consentement).
+            </li>
+            <li>
+              Les préférences peuvent être modifiées à tout moment via le lien{' '}
+              <strong>Préférences cookies</strong> présent en pied de page.
             </li>
           </ul>
         </article>

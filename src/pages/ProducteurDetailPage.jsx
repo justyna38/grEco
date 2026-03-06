@@ -1,44 +1,6 @@
 import { Helmet } from 'react-helmet-async';
 import { Link, useParams } from 'react-router-dom';
-
-const producteursDetails = {
-  'ferme-des-ecrins': {
-    nom: 'Ferme des Écrins',
-    type: 'Maraîchage bio',
-    localisation: 'Saint-Martin-d’Hères',
-    description:
-      'La Ferme des Écrins cultive des légumes de saison en agriculture biologique, à quelques kilomètres de Grenoble. Les cultures sont pensées pour respecter les sols et la biodiversité.',
-    pratiques: [
-      'Rotation des cultures et engrais verts',
-      'Aucun pesticide de synthèse',
-      'Vente prioritaire en circuit court'
-    ]
-  },
-  'boulangerie-des-alpes': {
-    nom: 'Boulangerie des Alpes',
-    type: 'Boulangerie artisanale',
-    localisation: 'Grenoble',
-    description:
-      'Une boulangerie de quartier qui travaille des farines locales et des fermentations longues pour des pains digestes et savoureux.',
-    pratiques: [
-      'Collaboration avec des meuniers de la région',
-      'Privilégie les farines issues de blés anciens',
-      'Limitation du gaspillage en fin de journée'
-    ]
-  },
-  'fromagerie-du-vercors': {
-    nom: 'Fromagerie du Vercors',
-    type: 'Fromages & produits laitiers',
-    localisation: 'Vercors',
-    description:
-      'Une fromagerie de montagne qui valorise le lait des troupeaux pâturant sur les hauteurs du Vercors, avec un soin particulier porté au bien-être animal.',
-    pratiques: [
-      'Pâturage en plein air',
-      'Transformation sur place',
-      'Vente directe et via des circuits courts'
-    ]
-  }
-};
+import { producteursDetails } from '../data/producteurs.mjs';
 
 function ProducteurDetailPage() {
   const { id } = useParams();
@@ -71,6 +33,48 @@ function ProducteurDetailPage() {
           content={`${producteur.nom}, ${producteur.type} situé à ${producteur.localisation}, partenaire de la marketplace locale écoresponsable GrEco.`}
         />
         <link rel="canonical" href={`https://gr-eco.vercel.app/producteurs/${id}`} />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'BreadcrumbList',
+            itemListElement: [
+              {
+                '@type': 'ListItem',
+                position: 1,
+                name: 'Accueil',
+                item: 'https://gr-eco.vercel.app/'
+              },
+              {
+                '@type': 'ListItem',
+                position: 2,
+                name: 'Producteurs',
+                item: 'https://gr-eco.vercel.app/producteurs'
+              },
+              {
+                '@type': 'ListItem',
+                position: 3,
+                name: producteur.nom,
+                item: `https://gr-eco.vercel.app/producteurs/${id}`
+              }
+            ]
+          })}
+        </script>
+        <script type="application/ld+json">
+          {JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'LocalBusiness',
+            name: producteur.nom,
+            description: producteur.description,
+            areaServed: 'Métropole grenobloise',
+            address: {
+              '@type': 'PostalAddress',
+              addressLocality: producteur.localisation,
+              addressRegion: 'Auvergne-Rhône-Alpes',
+              addressCountry: 'FR'
+            },
+            url: `https://gr-eco.vercel.app/producteurs/${id}`
+          })}
+        </script>
       </Helmet>
 
       <header className="page-header">
