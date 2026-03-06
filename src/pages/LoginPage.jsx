@@ -46,18 +46,18 @@ function LoginPage() {
         <link rel="canonical" href="https://gr-eco.vercel.app/connexion" />
       </Helmet>
 
-      <header className="page-header">
+      {/* <header className="page-header">
         <p className="page-kicker">Espace client</p>
         <h1 className="page-title">Connexion à GrEco</h1>
         <p className="page-lead">
           Utilisez le compte de démonstration ci-dessous pour tester le parcours d&apos;achat sur le
           marché de produits locaux.
         </p>
-      </header>
+      </header> */}
 
       <section className="section">
         <div className="card-soft auth-card">
-          <div className="auth-demo-box">
+          {/* <div className="auth-demo-box">
             <p className="auth-demo-title">Identifiants de démonstration</p>
             <p className="auth-demo-line">
               <span>Email :</span> <code>{testCredentials.email}</code>
@@ -68,7 +68,7 @@ function LoginPage() {
             <p className="note">
               Ces identifiants servent uniquement à explorer le parcours e-commerce de GrEco.
             </p>
-          </div>
+          </div> */}
 
           <form className="form auth-form" onSubmit={handleSubmit} noValidate>
             <div className="form-row">
