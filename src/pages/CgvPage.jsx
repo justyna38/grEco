@@ -78,7 +78,7 @@ function CgvPage() {
         <article className="card-soft">
           <h2 className="section-title">5. Paiement</h2>
           <p className="section-sub">
-            Dans une version réelle, le paiement doit être sécurisé (prestataire de paiement),
+           Le paiement doit être sécurisé (prestataire de paiement),
             accompagné des informations obligatoires (moyens acceptés, échéance, lutte contre la
             fraude).
           </p>
