@@ -82,6 +82,14 @@ function ProducteursPage() {
                   ))}
                 </div>
                 <p className="product-description">{p.resume}</p>
+                <div className="product-actions">
+                  <button type="button" className="btn btn-outline">
+                    Appeler
+                  </button>
+                  <button type="button" className="btn btn-ghost">
+                    Itinéraire
+                  </button>
+                </div>
                 <Link
                   to={`/producteurs/${p.id}`}
                   className="btn btn-primary product-btn"
