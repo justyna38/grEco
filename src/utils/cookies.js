@@ -26,13 +26,15 @@ export function setCookie(name, value, days) {
     return `; expires=${date.toUTCString()}`;
   })();
 
+  const secure = window.location?.protocol === 'https:' ? '; Secure' : '';
   document.cookie = `${name}=${encodeURIComponent(
     value
-  )}${expires}; path=/; SameSite=Lax`;
+  )}${expires}; path=/; SameSite=Lax${secure}`;
 }
 
 export function deleteCookie(name) {
   if (!isBrowser) return;
-  document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/; SameSite=Lax`;
+  const secure = window.location?.protocol === 'https:' ? '; Secure' : '';
+  document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/; SameSite=Lax${secure}`;
 }
 

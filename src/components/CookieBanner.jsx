@@ -28,7 +28,7 @@ function CookieBanner() {
             Nous utilisons des cookies de mesure d&apos;audience afin de mieux comprendre l&apos;usage
             de GrEco et d&apos;améliorer le service. Vous pouvez accepter ou refuser ces cookies.
             Votre choix sera enregistré pendant plusieurs mois.{' '}
-            <Link to="/confidentialite">En savoir plus</Link>
+            <Link to="/cookies">En savoir plus</Link>
           </p>
         </div>
         <div className="cookie-banner-actions">

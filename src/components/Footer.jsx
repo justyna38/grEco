@@ -47,6 +47,15 @@ function Footer() {
               <Link to="/confidentialite">Confidentialité</Link>
             </li>
             <li>
+              <Link to="/cookies">Politique cookies</Link>
+            </li>
+            <li>
+              <Link to="/cgu">CGU</Link>
+            </li>
+            <li>
+              <Link to="/cgv">CGV</Link>
+            </li>
+            <li>
               <button type="button" className="link-button" onClick={openPreferences}>
                 Préférences cookies
               </button>

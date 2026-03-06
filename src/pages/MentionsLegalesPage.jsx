@@ -67,8 +67,9 @@ function MentionsLegalesPage() {
           <h2 className="section-title">Données personnelles & cookies</h2>
           <p className="section-sub">
             Les traitements de données et la gestion des cookies sont détaillés dans la{' '}
-            <Link to="/confidentialite">politique de confidentialité</Link>. Les cookies de mesure
-            d&apos;audience ne sont activés qu&apos;après consentement explicite.
+            <Link to="/confidentialite">politique de confidentialité</Link> et la{' '}
+            <Link to="/cookies">politique cookies</Link>. Les cookies de mesure d&apos;audience ne
+            sont activés qu&apos;après consentement explicite.
           </p>
         </article>
       </section>

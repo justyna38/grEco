@@ -18,6 +18,9 @@ import BlogArticlePage from './pages/BlogArticlePage.jsx';
 import ContactPage from './pages/ContactPage.jsx';
 import MentionsLegalesPage from './pages/MentionsLegalesPage.jsx';
 import ConfidentialitePage from './pages/ConfidentialitePage.jsx';
+import CookiesPage from './pages/CookiesPage.jsx';
+import CguPage from './pages/CguPage.jsx';
+import CgvPage from './pages/CgvPage.jsx';
 import NotFoundPage from './pages/NotFoundPage.jsx';
 import LoginPage from './pages/LoginPage.jsx';
 import ProduitsPage from './pages/ProduitsPage.jsx';
@@ -98,6 +101,9 @@ function App() {
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/mentions-legales" element={<MentionsLegalesPage />} />
           <Route path="/confidentialite" element={<ConfidentialitePage />} />
+          <Route path="/cookies" element={<CookiesPage />} />
+          <Route path="/cgu" element={<CguPage />} />
+          <Route path="/cgv" element={<CgvPage />} />
           <Route path="/kpi" element={<KpiDashboardPage />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>

@@ -16,6 +16,9 @@ const staticRoutes = [
   { path: '/comment-ca-marche', changefreq: 'yearly', priority: 0.4 },
   { path: '/mentions-legales', changefreq: 'yearly', priority: 0.2 },
   { path: '/confidentialite', changefreq: 'yearly', priority: 0.2 },
+  { path: '/cookies', changefreq: 'yearly', priority: 0.2 },
+  { path: '/cgu', changefreq: 'yearly', priority: 0.2 },
+  { path: '/cgv', changefreq: 'yearly', priority: 0.2 },
   { path: '/connexion', changefreq: 'yearly', priority: 0.3 }
 ];
 

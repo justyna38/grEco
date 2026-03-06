@@ -63,6 +63,9 @@ function buildUrlList() {
   // Légal (indexable)
   urls.push(urlEntry(asUrl('/mentions-legales'), { changefreq: 'yearly', priority: 0.3 }));
   urls.push(urlEntry(asUrl('/confidentialite'), { changefreq: 'yearly', priority: 0.3 }));
+  urls.push(urlEntry(asUrl('/cookies'), { changefreq: 'yearly', priority: 0.3 }));
+  urls.push(urlEntry(asUrl('/cgu'), { changefreq: 'yearly', priority: 0.2 }));
+  urls.push(urlEntry(asUrl('/cgv'), { changefreq: 'yearly', priority: 0.2 }));
 
   // Pages dynamiques “contenu” (articles)
   for (const article of blogArticlesList) {

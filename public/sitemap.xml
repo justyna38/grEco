@@ -85,6 +85,24 @@
     <priority>0.3</priority>
   </url>
   <url>
+    <loc>https://gr-eco.vercel.app/cookies</loc>
+    <lastmod>2026-03-06</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://gr-eco.vercel.app/cgu</loc>
+    <lastmod>2026-03-06</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  <url>
+    <loc>https://gr-eco.vercel.app/cgv</loc>
+    <lastmod>2026-03-06</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  <url>
     <loc>https://gr-eco.vercel.app/blog/pourquoi-une-marketplace-locale-a-grenoble</loc>
     <lastmod>2026-03-06</lastmod>
     <changefreq>monthly</changefreq>
